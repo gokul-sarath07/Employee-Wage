@@ -4,17 +4,19 @@ WagePerHr=20
 FullHr=8
 PartHr=4
 check=$(( RANDOM%3 ))
-if [[ $check -eq 1 ]]
-then
-	echo "Full Time Employee Present"
-	salary=$(( $WagePerHr * $FullHr ))
-	echo "Salary: "$salary
-elif [[ $check -eq 2 ]]
-then
-	echo "Part Time Employee Present"
-	salary=$(( $WagePerHr * $PartHr ))
-	echo "Salary: " $salary
-else
-	echo "Employee Absent"
-	echo "Salary: 0"
-fi
+case $check in
+	1)
+		echo "Full Time Employee Present"
+		salary=$(( $WagePerHr * $FullHr ))
+		echo "Salary: "$salary
+		;;
+	2)
+		echo "Part Time Employee Present"
+		salary=$(( $WagePerHr * $PartHr ))
+		echo "Salary: " $salary
+		;;
+	0)
+		echo "Employee Absent"
+		echo "Salary: 0"
+		;;
+esac
