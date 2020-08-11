@@ -34,3 +34,5 @@ do
 	DailyWages[$Total_Working_Days]=$(( $empHr * $Wage_Per_Hr ))
 done
 totalSalary=$( getEmpWage $Total_Emp_Hr )
+echo "Day: "${!DailyWages[@]}
+echo "Daily Wage: "${DailyWages[@]}
